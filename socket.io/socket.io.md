@@ -13,8 +13,6 @@ const socket = io.connect('http://localhost');
 socket.emit('say', { my: 'data' }); 
 socket.on('news', function (data) { console.log(data);})
 ```
-- - -
-
 ## 服务端
 ```
 const app = require('express')() , 
@@ -33,7 +31,6 @@ io.on('connection', (socket) => {
     });
 });
 ```
-- - -
 ## 通信
 #### 通过 socket.io 的核心函数 emit 和 on 就实现服务器与客户端之间的双向通信
 - emit ：用来触发一个事件，参数（事件名，数据，回调（一般省略，如需对方接受到信息后立即得到确认时，则需要用到回调函数））
